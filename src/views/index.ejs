@@ -7,7 +7,13 @@
   </header>
   <!-- EJS Check for if a req.user is present -->
   <article>
-    Hello, <%= user ? user.firstName : 'Guest' %>!
+    <%if (user) { %>
+      Hello, <%= user ? user.firstName : 'Guest' %>!
+      <%- include('partials/main/contact_dashboard'); %>
+    <% } else { %>
+      <%- include('partials/main/landing'); %>
+    <% } %>
+
   </article>
 
   <footer>

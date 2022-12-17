@@ -1,6 +1,7 @@
 import orm from '../db';
 import { DataTypes as dt, Model } from 'sequelize';
 import crypto from "crypto";
+import { Contact } from './Contact';
 
 export class User extends Model {}
 
@@ -13,6 +14,7 @@ User.init({
   password: {
     type: dt.STRING,
     allowNull: false,
+    defaultValue: "",
     set(val: string) {
       const hash = crypto
         .pbkdf2Sync(
@@ -39,10 +41,18 @@ User.init({
     allowNull: false,
     defaultValue: "",
   },
+  googleId: {
+    type: dt.STRING,
+    allowNull: true,
+  }
 }, {
   sequelize: orm,
   modelName: 'User',
 });
+
+User.hasMany(Contact, {
+  foreignKey: 'assignedUserId',
+})
 
 
 User.sync().then(() => {

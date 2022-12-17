@@ -1,0 +1,16 @@
+<div id="contactDashboard">
+  <div class="dashboardElement">
+    <p>You have <%- contacts.length %> assigned <%- contacts.length > 1 ? "contacts" : "contact" %> </p>
+  </div>
+  <div class="dashboardElement">
+    <span>Test Div 2</span>
+  </div>
+  <div class="dashboardElement">
+    <p>
+      There are <%- contacts.filter(c => c.blocked == true).length %> number of contacts which are blocked. 
+    </p>
+  </div>
+  <div class="dashboardElement">
+    <span>Test Div 4</span>
+  </div>
+</div>
