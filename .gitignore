@@ -1,1 +1,9 @@
 node_modules
+build/
+*.log
+
+# Environment variables
+.env
+
+# VS Code Settings
+.vscode
