@@ -15,5 +15,12 @@ export const Contact = orm.define('Contact', {
   email: {
     type: dt.STRING,
     allowNull: true,
+    defaultValue: "",
   },
 });
+
+Contact.sync().then(() => {
+  console.log('Contacts table created');
+});
+
+export type Contact = typeof Contact;

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head'); %>
+
+  <body>
+    <header>
+      <%- include('../partials/header'); %>
+    </header>
+    <article>
+      <div>
+        <h1>Register</h1>
+        <!-- Check for EJS Errors -->
+        <% if (errors.length > 0) { %>
+          <div class="errors">
+            <h3>There were errors with your submission:</h3>
+            <ul>
+              <% errors.forEach(function(error) { %>
+                <li><%= error %></li>
+              <% }) %>
+            </ul>
+          </div>
+        <% } %>
+        <form action="/auth/register" method="post">
+          <label for="firstName">First Name</label>
+          <input type="firstName" name="firstName" id="firstName">
+          <label for="lastName">Last Name</label>
+          <input type="lastName" name="lastName" id="lastName">
+          <label for="username">Username</label>
+          <input type="username" name="userName" id="userName">
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email">
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password">
+          <label for="password">Confirm Password</label>
+          <input type="password" name="passwordConfirmation" id="passwordConfirmation">
+          <button type="submit">Register</button>
+      </div>
+    </article>
+    <footer>
+      <%- include('../partials/footer'); %>
+    </footer>
+  </body>
+
+</html>

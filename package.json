@@ -4,12 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsc && cp -r views build/ && nodemon --ignore '*.db' --ignore '*.log.json' build/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/connect-flash": "^0.0.37",
+    "@types/express-session": "^1.17.5",
+    "@types/passport": "^1.0.11",
+    "@types/passport-local": "^1.0.34",
     "@typescript-eslint/eslint-plugin": "^5.46.1",
     "eslint": "^8.30.0",
     "eslint-config-standard-with-typescript": "^24.0.0",
@@ -19,8 +24,16 @@
     "typescript": "^4.9.4"
   },
   "dependencies": {
+    "connect-flash": "^0.1.1",
+    "crypto": "^1.0.1",
     "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
     "express": "^4.18.2",
+    "express-rate-limit": "^6.7.0",
+    "express-session": "^1.17.3",
+    "nodemon": "^2.0.20",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
     "sequelize": "^6.27.0",
     "sqlite": "^4.1.2",
     "sqlite3": "^5.1.4",

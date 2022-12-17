@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head'); %>
+<body>
+  <header>
+    <%- include('partials/header'); %>
+  </header>
+  <!-- EJS Check for if a req.user is present -->
+  <article>
+    Hello, <%= user ? user.firstName : 'Guest' %>!
+  </article>
+
+  <footer>
+    <%- include('partials/footer'); %>
+  </footer>
+</body>
+</html>

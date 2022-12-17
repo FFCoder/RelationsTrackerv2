@@ -1,9 +1,14 @@
 node_modules
 build/
 *.log
+*.log.json
 
 # Environment variables
 .env
 
 # VS Code Settings
 .vscode
+
+# DB Files
+*.sqlite
+*.db

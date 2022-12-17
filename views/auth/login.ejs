@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head'); %>
+
+  <body>
+    <header>
+      <%- include('../partials/header'); %>
+    </header>
+    <article>
+      <div>
+        <h1>Login</h1>
+        <!-- Check for EJS Errors -->
+        <% if (errors.length > 0) { %>
+          <div class="errors">
+            <h3>There were errors with your submission:</h3>
+            <ul>
+              <% errors.forEach(function(error) { %>
+                <li><%= error %></li>
+              <% }) %>
+            </ul>
+          </div>
+        <% } %>
+      <form action="/auth/login" method="post">
+        <label for="username">Username</label>
+        <input type="username" name="username" id="username">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password">
+        <button type="submit">Login</button>
+      </form>
+      </div>
+    </article>
+    <footer>
+      <%- include('../partials/footer'); %>
+    </footer>
+  </body>
+
+</html>
